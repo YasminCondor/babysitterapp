@@ -47,3 +47,8 @@ gem 'simple_form'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+  #authentication gem
+  gem 'devise'
+  #management gem
+  gem 'rails_admin'
