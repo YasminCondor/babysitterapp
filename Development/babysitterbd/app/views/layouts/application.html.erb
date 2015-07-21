@@ -46,6 +46,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">Baby Sitter Web</a>
+         <%if user_signed_in? %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Registro niñeras", "/path1"  %></li>
@@ -53,6 +54,7 @@
             <li><%= link_to "Consulta de servicios", "/path3"  %></li>
           </ul>
         </div>
+      <%end%>
       </div>
     </div>
 
@@ -62,8 +64,11 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
+        
+         <%if user_signed_in? %>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
+           
             <h3>Opciones disponibles</h3>
             <ul class="nav nav-list">
               <li class="nav-header"></li>
@@ -71,8 +76,11 @@
               <li><%= link_to "Registro disponibilidad", "/path2"  %></li>
               <li><%= link_to "Consulta de servicios", "/path3"  %></li>
             </ul>
+           
           </div><!--/.well -->
         </div><!--/span-->
+         <%end%>
+        
       </div><!--/row-->
 
       <footer>
