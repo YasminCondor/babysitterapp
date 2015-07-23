@@ -1,5 +1,5 @@
 # babysitterapp
 
 Aplicación web de Baby Sitter
-#Ruby on Rails
-#Bootstrap
+-Ruby on Rails
+-Bootstrap
