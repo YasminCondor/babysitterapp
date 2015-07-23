@@ -1,0 +1,20 @@
+<%= simple_form_for(@babysitter) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :phonenumber %>
+    <%= f.input :firstname %>
+    <%= f.input :lastname %>
+    <%= f.input :document %>
+    <%= f.input :birthdate %>
+    <%= f.input :district %>
+    <%= f.input :address %>
+    <%= f.input :startdate %>
+    <%= f.input :resume %>
+    <%= f.input :maxcountchildren %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

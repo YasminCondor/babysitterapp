@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718075403) do
+ActiveRecord::Schema.define(version: 20150723004953) do
+
+  create_table "babysitters", force: :cascade do |t|
+    t.text     "phonenumber",      limit: 65535
+    t.text     "firstname",        limit: 65535
+    t.text     "lastname",         limit: 65535
+    t.text     "document",         limit: 65535
+    t.text     "birthdate",        limit: 65535
+    t.text     "district",         limit: 65535
+    t.text     "address",          limit: 65535
+    t.text     "startdate",        limit: 65535
+    t.text     "resume",           limit: 65535
+    t.integer  "maxcountchildren", limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
