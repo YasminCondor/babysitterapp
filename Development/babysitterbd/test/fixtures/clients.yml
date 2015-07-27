@@ -3,10 +3,6 @@
 one:
   name: MyString
   lastname: MyString
-  document: 1
-  startdate: 2015-07-27
-  maxcount: 1
-  resume: MyText
   phone: 1
   email: MyString
   password: MyString
@@ -14,10 +10,6 @@ one:
 two:
   name: MyString
   lastname: MyString
-  document: 1
-  startdate: 2015-07-27
-  maxcount: 1
-  resume: MyText
   phone: 1
   email: MyString
   password: MyString

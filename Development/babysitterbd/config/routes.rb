@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :schedules
   resources :babysitters
+  resources :babysitters
+  resources :clients
+  resources :districts
   devise_for :users
   get 'home/index'
   root 'home#index'

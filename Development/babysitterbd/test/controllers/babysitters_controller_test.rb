@@ -18,7 +18,7 @@ class BabysittersControllerTest < ActionController::TestCase
 
   test "should create babysitter" do
     assert_difference('Babysitter.count') do
-      post :create, babysitter: { address: @babysitter.address, birthdate: @babysitter.birthdate, district: @babysitter.district, document: @babysitter.document, firstname: @babysitter.firstname, lastname: @babysitter.lastname, maxcountchildren: @babysitter.maxcountchildren, phonenumber: @babysitter.phonenumber, resume: @babysitter.resume, startdate: @babysitter.startdate }
+      post :create, babysitter: { document: @babysitter.document, email: @babysitter.email, lastname: @babysitter.lastname, maxcount: @babysitter.maxcount, name: @babysitter.name, password: @babysitter.password, phone: @babysitter.phone, resume: @babysitter.resume, startdate: @babysitter.startdate }
     end
 
     assert_redirected_to babysitter_path(assigns(:babysitter))
@@ -35,7 +35,7 @@ class BabysittersControllerTest < ActionController::TestCase
   end
 
   test "should update babysitter" do
-    patch :update, id: @babysitter, babysitter: { address: @babysitter.address, birthdate: @babysitter.birthdate, district: @babysitter.district, document: @babysitter.document, firstname: @babysitter.firstname, lastname: @babysitter.lastname, maxcountchildren: @babysitter.maxcountchildren, phonenumber: @babysitter.phonenumber, resume: @babysitter.resume, startdate: @babysitter.startdate }
+    patch :update, id: @babysitter, babysitter: { document: @babysitter.document, email: @babysitter.email, lastname: @babysitter.lastname, maxcount: @babysitter.maxcount, name: @babysitter.name, password: @babysitter.password, phone: @babysitter.phone, resume: @babysitter.resume, startdate: @babysitter.startdate }
     assert_redirected_to babysitter_path(assigns(:babysitter))
   end
 

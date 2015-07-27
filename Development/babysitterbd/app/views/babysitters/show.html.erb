@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Phonenumber:</strong>
-  <%= @babysitter.phonenumber %>
-</p>
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @babysitter.firstname %>
+  <strong>Name:</strong>
+  <%= @babysitter.name %>
 </p>
 
 <p>
@@ -21,23 +16,13 @@
 </p>
 
 <p>
-  <strong>Birthdate:</strong>
-  <%= @babysitter.birthdate %>
-</p>
-
-<p>
-  <strong>District:</strong>
-  <%= @babysitter.district %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @babysitter.address %>
-</p>
-
-<p>
   <strong>Startdate:</strong>
   <%= @babysitter.startdate %>
+</p>
+
+<p>
+  <strong>Maxcount:</strong>
+  <%= @babysitter.maxcount %>
 </p>
 
 <p>
@@ -46,8 +31,18 @@
 </p>
 
 <p>
-  <strong>Maxcountchildren:</strong>
-  <%= @babysitter.maxcountchildren %>
+  <strong>Phone:</strong>
+  <%= @babysitter.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @babysitter.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @babysitter.password %>
 </p>
 
 <%= link_to 'Edit', edit_babysitter_path(@babysitter) %> |

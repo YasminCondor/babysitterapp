@@ -1,1 +1,1 @@
-json.extract! @babysitter, :id, :phonenumber, :firstname, :lastname, :document, :birthdate, :district, :address, :startdate, :resume, :maxcountchildren, :created_at, :updated_at
+json.extract! @babysitter, :id, :name, :lastname, :document, :startdate, :maxcount, :resume, :phone, :email, :password, :created_at, :updated_at

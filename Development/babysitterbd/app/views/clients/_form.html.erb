@@ -1,13 +1,9 @@
-<%= simple_form_for(@babysitter) do |f| %>
+<%= simple_form_for(@client) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :lastname %>
-    <%= f.input :document %>
-    <%= f.input :startdate %>
-    <%= f.input :maxcount %>
-    <%= f.input :resume %>
     <%= f.input :phone %>
     <%= f.input :email %>
     <%= f.input :password %>

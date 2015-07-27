@@ -11,22 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723004953) do
+ActiveRecord::Schema.define(version: 20150727181233) do
 
   create_table "babysitters", force: :cascade do |t|
-    t.text     "phonenumber",      limit: 65535
-    t.text     "firstname",        limit: 65535
-    t.text     "lastname",         limit: 65535
-    t.text     "document",         limit: 65535
-    t.text     "birthdate",        limit: 65535
-    t.text     "district",         limit: 65535
-    t.text     "address",          limit: 65535
-    t.text     "startdate",        limit: 65535
-    t.text     "resume",           limit: 65535
-    t.integer  "maxcountchildren", limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "name",       limit: 255
+    t.string   "lastname",   limit: 255
+    t.integer  "document",   limit: 4
+    t.date     "startdate"
+    t.integer  "maxcount",   limit: 4
+    t.text     "resume",     limit: 65535
+    t.integer  "phone",      limit: 4
+    t.string   "email",      limit: 255
+    t.string   "password",   limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "lastname",   limit: 255
+    t.integer  "phone",      limit: 4
+    t.string   "email",      limit: 255
+    t.string   "password",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "districts", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title",         limit: 255
+    t.date     "date"
+    t.boolean  "state",         limit: 1
+    t.integer  "babysitter_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "schedules", ["babysitter_id"], name: "index_schedules_on_babysitter_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -46,4 +72,5 @@ ActiveRecord::Schema.define(version: 20150723004953) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "schedules", "babysitters"
 end
