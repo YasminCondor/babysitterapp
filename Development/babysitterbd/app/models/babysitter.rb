@@ -1,3 +1,3 @@
 class Babysitter < ActiveRecord::Base
-        has_many :posts
+  belongs_to :district
 end

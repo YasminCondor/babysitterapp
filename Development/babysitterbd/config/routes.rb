@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ratings
+  resources :services
   resources :schedules
   resources :babysitters
   resources :babysitters

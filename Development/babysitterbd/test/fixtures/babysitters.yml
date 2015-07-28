@@ -4,20 +4,22 @@ one:
   name: MyString
   lastname: MyString
   document: 1
-  startdate: 2015-07-27
+  startdate: 2015-07-28
   maxcount: 1
   resume: MyText
   phone: 1
   email: MyString
   password: MyString
+  district_id: 
 
 two:
   name: MyString
   lastname: MyString
   document: 1
-  startdate: 2015-07-27
+  startdate: 2015-07-28
   maxcount: 1
   resume: MyText
   phone: 1
   email: MyString
   password: MyString
+  district_id: 

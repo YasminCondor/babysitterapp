@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727181233) do
+ActiveRecord::Schema.define(version: 20150728005418) do
 
   create_table "babysitters", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "lastname",   limit: 255
-    t.integer  "document",   limit: 4
+    t.string   "name",        limit: 255
+    t.string   "lastname",    limit: 255
+    t.integer  "document",    limit: 4
     t.date     "startdate"
-    t.integer  "maxcount",   limit: 4
-    t.text     "resume",     limit: 65535
-    t.integer  "phone",      limit: 4
-    t.string   "email",      limit: 255
-    t.string   "password",   limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "maxcount",    limit: 4
+    t.text     "resume",      limit: 65535
+    t.integer  "phone",       limit: 4
+    t.string   "email",       limit: 255
+    t.string   "password",    limit: 255
+    t.integer  "district_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
+
+  add_index "babysitters", ["district_id"], name: "index_babysitters_on_district_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -43,16 +46,36 @@ ActiveRecord::Schema.define(version: 20150727181233) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "service_id", limit: 4
+    t.integer  "value",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "ratings", ["service_id"], name: "index_ratings_on_service_id", using: :btree
+
   create_table "schedules", force: :cascade do |t|
-    t.string   "title",         limit: 255
     t.date     "date"
     t.boolean  "state",         limit: 1
     t.integer  "babysitter_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "schedules", ["babysitter_id"], name: "index_schedules_on_babysitter_id", using: :btree
+
+  create_table "services", force: :cascade do |t|
+    t.integer  "client_id",     limit: 4
+    t.integer  "babysitter_id", limit: 4
+    t.integer  "schedule_id",   limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "services", ["babysitter_id"], name: "index_services_on_babysitter_id", using: :btree
+  add_index "services", ["client_id"], name: "index_services_on_client_id", using: :btree
+  add_index "services", ["schedule_id"], name: "index_services_on_schedule_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -72,5 +95,10 @@ ActiveRecord::Schema.define(version: 20150727181233) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "babysitters", "districts"
+  add_foreign_key "ratings", "services"
   add_foreign_key "schedules", "babysitters"
+  add_foreign_key "services", "babysitters"
+  add_foreign_key "services", "clients"
+  add_foreign_key "services", "schedules"
 end

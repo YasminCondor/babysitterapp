@@ -10,6 +10,7 @@ class CreateBabysitters < ActiveRecord::Migration
       t.integer :phone
       t.string :email
       t.string :password
+      t.references :district, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -1,7 +1,6 @@
 class CreateSchedules < ActiveRecord::Migration
   def change
     create_table :schedules do |t|
-      t.string :title
       t.date :date
       t.boolean :state
       t.references :babysitter, index: true, foreign_key: true
