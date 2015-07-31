@@ -52,3 +52,5 @@ gem 'twitter-bootstrap-rails'
   gem 'devise'
   #management gem
   gem 'rails_admin'
+  
+  #comentariodeprueba
