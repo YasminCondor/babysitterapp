@@ -1,13 +1,23 @@
-<h1>Bienvenido al sistema Web de BabySitter</h1>
 <!--<p>Find me in app/views/home/index.html.erb</p>-->
+
+<br>
+<h1 style="text-align:center"><b>Bienvenido al sistema Web BabySitter</b></h1>
+<br>
+<br>
+<center><%=image_tag("principal2.jpg", :alt => "imagen principal",:title => "Indominous",:width => "200",:height => "200") %>
+</center>
+<br>
+<br>
 <%if user_signed_in? %>
-    <p><%= "User #{current_user.email} has a session started" %></p>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <p><%= "Usuario #{current_user.email} ha iniciado una sesión" %></p>
+    <%= link_to "Desconectarse", destroy_user_session_path, method: :delete %>
     
     <%else%>
     <p> Please
-    <% link_to " Sign in ", new_user_session_path %>
+    <% link_to " Conectarse ", new_user_session_path %>
     or
-    <% link_to " Sign up", new_user_registration_path %>
+    <% link_to " Crear cuenta", new_user_registration_path %>
     </p>
 <%end%>
+
+
