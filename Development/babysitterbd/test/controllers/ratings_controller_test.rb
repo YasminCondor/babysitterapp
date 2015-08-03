@@ -18,7 +18,7 @@ class RatingsControllerTest < ActionController::TestCase
 
   test "should create rating" do
     assert_difference('Rating.count') do
-      post :create, rating: { service_id: @rating.service_id, value: @rating.value }
+      post :create, rating: { service_id: @rating.service_id, type: @rating.type, value: @rating.value }
     end
 
     assert_redirected_to rating_path(assigns(:rating))
@@ -35,7 +35,7 @@ class RatingsControllerTest < ActionController::TestCase
   end
 
   test "should update rating" do
-    patch :update, id: @rating, rating: { service_id: @rating.service_id, value: @rating.value }
+    patch :update, id: @rating, rating: { service_id: @rating.service_id, type: @rating.type, value: @rating.value }
     assert_redirected_to rating_path(assigns(:rating))
   end
 

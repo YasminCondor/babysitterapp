@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :services
   resources :schedules
   resources :babysitters
-  resources :babysitters
   resources :clients
   resources :districts
   devise_for :users

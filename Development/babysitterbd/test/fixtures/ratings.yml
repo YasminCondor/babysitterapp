@@ -3,7 +3,9 @@
 one:
   service_id: 
   value: 1
+  type: 
 
 two:
   service_id: 
   value: 1
+  type: 

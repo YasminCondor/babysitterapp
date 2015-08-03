@@ -3,7 +3,7 @@ class CreateBabysitters < ActiveRecord::Migration
     create_table :babysitters do |t|
       t.string :name
       t.string :lastname
-      t.integer :document
+      t.string :document
       t.date :startdate
       t.integer :maxcount
       t.text :resume

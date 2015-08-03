@@ -3,6 +3,7 @@ class CreateRatings < ActiveRecord::Migration
     create_table :ratings do |t|
       t.references :service, index: true, foreign_key: true
       t.integer :value
+      t.string :type
 
       t.timestamps null: false
     end

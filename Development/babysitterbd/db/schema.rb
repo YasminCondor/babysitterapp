@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728005418) do
+ActiveRecord::Schema.define(version: 20150803215127) do
 
   create_table "babysitters", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "lastname",    limit: 255
-    t.integer  "document",    limit: 4
+    t.string   "document",    limit: 255
     t.date     "startdate"
     t.integer  "maxcount",    limit: 4
     t.text     "resume",      limit: 65535
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(version: 20150728005418) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "service_id", limit: 4
     t.integer  "value",      limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "type",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "ratings", ["service_id"], name: "index_ratings_on_service_id", using: :btree

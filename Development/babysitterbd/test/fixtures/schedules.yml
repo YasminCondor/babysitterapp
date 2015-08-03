@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2015-07-28
+  date: 2015-08-03
   state: false
   babysitter_id: 
 
 two:
-  date: 2015-07-28
+  date: 2015-08-03
   state: false
   babysitter_id: 
