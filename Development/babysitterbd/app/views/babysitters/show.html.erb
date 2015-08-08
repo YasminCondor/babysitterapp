@@ -47,8 +47,8 @@
 
 <p>
   <strong>District:</strong>
-  <%= @babysitter.district %>
+  <%= @babysitter.district.name %>
 </p>
 
 <%= link_to 'Edit', edit_babysitter_path(@babysitter) %> |
-<%= link_to 'Back', babysitters_path %>
+<%= link_to 'Back', babysitters_path , :class => "btn"%>

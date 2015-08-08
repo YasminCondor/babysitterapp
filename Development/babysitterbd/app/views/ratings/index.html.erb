@@ -2,7 +2,7 @@
 
 <h1>Listing Ratings</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Service</th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @ratings.each do |rating| %>
       <tr>
-        <td><%= rating.service %></td>
+        <td><%= rating.service.name %></td>
         <td><%= rating.value %></td>
         <td><%= rating.type %></td>
         <td><%= link_to 'Show', rating %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Rating', new_rating_path %>
+<%= link_to 'New Rating', new_rating_path ,:class => "btn btn-default"%>

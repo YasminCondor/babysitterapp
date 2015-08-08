@@ -2,7 +2,7 @@
 
 <h1>Listing Babysitters</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -31,7 +31,7 @@
         <td><%= babysitter.phone %></td>
         <td><%= babysitter.email %></td>
         <td><%= babysitter.password %></td>
-        <td><%= babysitter.district %></td>
+        <td><%= babysitter.district.name %></td>
         <td><%= link_to 'Show', babysitter %></td>
         <td><%= link_to 'Edit', edit_babysitter_path(babysitter) %></td>
         <td><%= link_to 'Destroy', babysitter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Babysitter', new_babysitter_path %>
+<%= link_to 'New Babysitter', new_babysitter_path ,:class => "btn btn-default"%>

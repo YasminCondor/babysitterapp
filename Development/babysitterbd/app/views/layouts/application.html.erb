@@ -49,10 +49,16 @@
          <%if user_signed_in? %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Registro niñeras", "/babysitters"  %></li>
-            <li><%= link_to "Registro disponibilidad", "/schedules"  %></li>
-            <li><%= link_to "Consulta de servicios", "/path3"  %></li>
+            <li><%= link_to "Babysitters", "/babysitters"  %></li>
+            <li><%= link_to "Schedules", "/schedules"  %></li>
+            <!--<li><%= link_to "Consulta de servicios", "/path3"  %></li>-->
           </ul>
+          <%if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
+          </ul>
+          <%end%>
+
         </div>
       <%end%>
       </div>

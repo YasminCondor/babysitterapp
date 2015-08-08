@@ -1,23 +1,26 @@
 <!--<p>Find me in app/views/home/index.html.erb</p>-->
 
 <br>
-<h1 style="text-align:center"><b>Bienvenido al sistema Web BabySitter</b></h1>
+<h1 style="text-align:center"><b>Wellcome to babysitter</b></h1>
 <br>
 <br>
-<center><%=image_tag("principal2.jpg", :alt => "imagen principal",:title => "Indominous",:width => "200",:height => "200") %>
+<center><%=image_tag("babysitter.jpg", :alt => "imagen principal",:title => "Indominous",:width => "%50",:height => "%50") %>
 </center>
 <br>
 <br>
+
+<!--
 <%if user_signed_in? %>
     <p><%= "Usuario #{current_user.email} ha iniciado una sesión" %></p>
-    <%= link_to "Desconectarse", destroy_user_session_path, method: :delete %>
+    <%= link_to "Desconectarse", destroy_user_session_path, method: :delete , :class => "btn btn-danger" %>
     
     <%else%>
     <p> Please
-    <% link_to " Conectarse ", new_user_session_path %>
+    <% link_to " Conectarse ", new_user_session_path, :class => "button" %>
     or
-    <% link_to " Crear cuenta", new_user_registration_path %>
+    <% link_to " Crear cuenta", new_user_registration_path ,
+            %>
     </p>
 <%end%>
-
+-->
 
